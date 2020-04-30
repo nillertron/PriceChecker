@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PriceChecker.Views.BackgroundWorkerPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Margin="0, 250, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  FontSize="20" Text="Active"></Label>
+            <Switch Grid.Column="1" IsToggled="{Binding Active}" />
+            <Label Grid.Column="2" Grid.Row="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  FontSize="20" Text="On / Off"></Label>
+            <Label Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  FontSize="20" Text="Scan interval"></Label>
+            <Picker Grid.Row="1" Grid.Column="1" SelectedItem="{Binding .}" SelectedIndex="{Binding PkIndex}" ItemsSource="{Binding Hours}"></Picker>
+            <Label Grid.Column="2" Grid.Row="1" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  FontSize="20" Text="Hours"></Label>
+            <Button Command="{Binding SaveCommand}" Grid.Row="2" Grid.Column="0" Text="Save"></Button>
+        </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

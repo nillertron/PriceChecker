@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PriceChecker.Views.StoredSearchDetailPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+
+
+            <Entry  Placeholder="Search word" Text="{Binding Item.SearchWord}"></Entry>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Min Price"></Label>
+                <Label Grid.Row="0" Grid.Column="1" Text="Max Price"></Label>
+                <Entry Placeholder="Min Price" Text="{Binding Item.MinPrice}" Grid.Row="1" Grid.Column="0"></Entry>
+                <Entry Placeholder="Max Price" Text="{Binding Item.MaxPrice}" Grid.Row="1" Grid.Column="1"></Entry>
+
+            </Grid>
+            <Button Text="Save" Command="{Binding SaveCommand}"></Button>
+            <Button Text="Delete" Command="{Binding DeleteCommand}" BackgroundColor="IndianRed"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
